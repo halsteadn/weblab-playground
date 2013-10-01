@@ -20,11 +20,11 @@ var makeChange = function(amount)   {
             change.tens = parseInt(amount / 1000);
             amount -= change.tens * 1000;
         }
-        else if(amount) >= 500) {
+        else if(amount >= 500) {
             change.fives = parseInt(amount / 500);
             amount -= change.fives * 500;            
         }
-        else (amount) >= 100)  {
+        else (amount >= 100)  {
             change.ones = parseInt(amount / 100);
             amount -= change.ones * 100;
         }
