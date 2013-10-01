@@ -1,32 +1,46 @@
-document.write("<h4> Making Change in Cash</h4>");
+document.write("<h3>Movie Sortation</h3>");
 
-var makeChange = function(amount)   {
-    var change = {};
-    
-    //convert to pennies to make the math easier
+/* STEP ONE: */
 
-    amount *= 100;
-    while(amount > 0)   {
-        //calculate hundreds
-        if(amount >= 10000) {
-            change.hundreds = parseInt(amount / 5000);
-            amount -= change.hundreds * 10000;
+var movies = [
+    'The Shawshank Redemption,1994,1043071',
+    'The Godfather,1972,732416',
+    'The Godfather: Part II,1974,474640',
+    'Pulp Fiction,1994,806431',
+    'The Dark Knight,2008,1017508',
+    '12 Angry Men,1957,255846',
+    'Schindler\'s List,1993,528900',
+    'The Lord of the Rings: The Return of the King,2003,738931',
+    'Fight Club,1999,791186',
+    'Star Wars: Episode V - The Empire Strikes Back,1980,503348'
+];
+
+
+var movieSort = function (movies) {
+    /* STEP TWO?? is WHATS the INPUT and WHATS the OUTPUT? one array coming out in a different array*/
+    var result = [];
+    for (var index = 0; index < movies.length; index++) {
+        var items = movies[index].split(",");
+        var movie = {
+            title: items[0],
+            year: parseInt(items[1]),
+            votes: parseInt(items[2]),
+        };
+        result.push(movie);
+    }
+    var sort = function (lhs, rhs) {
+        if (lhs.year < rhs.year) {
+            return -1;
+        } else if (lhs.year > rhs.year) {
+            return 1;
+        } else if (lhs.vote > rhs.vote) {
+            return -1;
+        } else {
+            return 0;
         }
-        else if(amount >= 5000) {
-            change.fifties = parseInt(amount / 5000);
-            amount -= change.fifties * 5000;    
-        }
-        else if(amount >= 1000) {
-            change.tens = parseInt(amount / 1000);
-            amount -= change.tens * 1000;
-        }
-        else if(amount >= 500) {
-            change.fives = parseInt(amount / 500);
-            amount -= change.fives * 500;            
-        }
-        else (amount >= 100)  {
-            change.ones = parseInt(amount / 100);
-            amount -= change.ones * 100;
-        }
+    }
+    return result.sort(movieSort);
 }
-return change
+document.write("<pre>" + 
+        JSON.stringify(movieSort(movies), null, '  ') + "</pre>");
+
