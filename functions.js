@@ -120,5 +120,11 @@ write a function that takes an array of text fragments and a length, and returns
 
 var filterWordlength = function(list, length)   {
     var result = [];
+    for(var index= 0; index < list.length; index++) {
+        var element = list[index];
+        if((typeof element === "string") && (element.length > length))   {
+            result.push(element);
+        }
+    }
     return result;    
 }
