@@ -1,13 +1,24 @@
-var reverseString = function(text)    {
-    var result = '';
-    for(var index = text.length -1; index >= 0; index--)    {
-        result += text[index];
+/*
+* returns a greeting based on the time of day
+* morning is midnight to noon, afgernoon is noon to five,
+* otherwise, it is evening.
+*/
+
+var dateGreeting = function(date)   {
+    var hours = (new Date).getHours();
+    if(hours < 12)  {
+        return "Good Morning";
     }
-    return result;
+    else if(hours < 17) {
+        return "Good Afternoon";
+    }
+    else    {
+        return "Good Evening"
+    }
 }
-               
-//                you can also use this concise code by John Rainey 
-               
-               return text.split("") .reverse() .join("");
-document.write('<p> a string of random words -> ' + reverseString("a longer example") + '</p>);
+
+document.write("<p>" + morning.toString() + " -> " + dateGreeting(morning) + "</p>");
+
+var morning = new Date(2013, 8, 30, 2, 34)
+
 
