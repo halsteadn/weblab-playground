@@ -1,5 +1,5 @@
 document.write('<b>Word Count Example</b');
-
+"use strict";
 var wordCount = function (text) {
   // \W matches non-word characters, match one or more
   var tokens = text.split(/\W+/);
@@ -91,7 +91,6 @@ var finale =[];
 }
 var amount = "356.82";
 console.log("amount is: $" + amount + "<br>");console.log(JSON.stringify(currency(amount)));
-
 
 var reverse = function (text)
 {
