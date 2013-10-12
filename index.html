@@ -1,14 +1,43 @@
 <html>
+    
     <head>
-        <title>
-            webLabbadabbaDoo
-        </title>
-    </head>
+        <title>webLabbadabbaDoo</title>
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.css" />
+        <!-- <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.css" />--></head>
+    
     <body>
-        <h1> Messing with Functions!</h1>
         
-        <script src = "classproblems.js"></script>
-<!--        document.write('<h4>Reverse String</h4>');-->
+        <h2>Messing with Functions!</h2>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                    <div id="weblab-navbar-brand"><strong><em><centered>Web Lab Playground</centered></em></strong></div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-offset-1 col-lg-9">
+                    <hi>Reverse String</hi>
+                    <form>
+                        <div class="form-group">
+            <label>Input String</label>
+           <input type=" text " class="form-control " id="new-filter-string " placeholder="Add string">
+            </div>             
+             <button class="add-filter-string btn btn-default">Add</button>
+             <ul class="filter-string-list">
+             </ul>
+             <div class="form-group">
+                            <label>Results</label>
+                            <input type="text" class="form-control" id="reverse-output" disabled>
+                        </div>
+                        <button class="execute-reverse-string btn btn-default">Reverse</button>
+                    </form>
+                </div>
+            </div>
+            <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+            <script src="./bootstrap/js/bootstrap.js"></script>
+            <script src="./functions.js"></script>
+            
+        </div>
+        </body>
 
-    </body>
-</html>
+<html>
